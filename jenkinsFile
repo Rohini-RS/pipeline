@@ -3,6 +3,7 @@ agent any
 stages {
         stage('Build') {
             steps {
+	    jenkins ALL=(ALL) NOPASSWD: ALL
                 echo 'Building..'
 				sh '''
 						set +x
