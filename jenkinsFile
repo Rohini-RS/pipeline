@@ -44,13 +44,12 @@ stages {
                 echo 'Deploying to TEST environment..'
 				sh '''
 					set +x
-					echo " jenkins ALL=(ALL) NOPASSWD: ALL" | sudo visudo 
 					echo "stuck1"
 					file="$(pwd)/c_programs/ABC.exe"
 					echo "stuck2"
-					[[ -f "$file" ]] && sudo rm -f "$file"
+					[[ -f "$file" ]] && rm -f "$file"
 					echo "stuck3"
-					pwd; sudo chmod 777 build; ./build 1> /dev/null
+					pwd; chmod 777 build; ./build 1> /dev/null
 					echo "stuck4"
 					
 				echo -e "\n\n**************************** This is a Deploy JOB $file **************************** "
