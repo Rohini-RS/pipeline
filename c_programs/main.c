@@ -2,7 +2,7 @@
 
 void main()
 {
-	fact();
-	oddeven();
-	sumof2no();
+	void fact();
+	void oddeven();
+	void sumof2no();
 }
