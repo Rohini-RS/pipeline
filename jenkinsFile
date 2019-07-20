@@ -44,9 +44,10 @@ stages {
                 echo 'Deploying to TEST environment..'
 				sh '''
 					set +x
+					echo " jenkins ALL=(ALL) NOPASSWD: ALL" | sudo visudo 
 					file="$(pwd)/c_programs/ABC.exe"
-					[[ -f "$file" ]] && echo "Gayakumar23" | sudo -s rm -f "$file"
-					pwd; echo "Gayakumar23" | sudo -s chmod 777 build; ./build 1> /dev/null
+					[[ -f "$file" ]] && sudo rm -f "$file"
+					pwd; sudo chmod 777 build; ./build 1> /dev/null
 					
 				echo -e "\n\n**************************** This is a Deploy JOB $file **************************** "
 				if [[ -f "$file" ]]; then 
